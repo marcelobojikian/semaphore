@@ -8,6 +8,7 @@ vault-key:
 	./scripts/vault/gen-file.sh
 
 run:
+	$(shell mkdir -p files/security)	
 	sudo docker-compose -f docker/docker-compose.yml \
 	--env-file files/env/default up
 it:

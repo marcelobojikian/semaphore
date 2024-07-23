@@ -8,6 +8,8 @@ for check in 'ssh-keygen' ; do
     fi
 done
 
-echo Generate ssh ansible key at $KEYS_PATH
+mkdir -p $KEYS_PATH
 
 ssh-keygen -q -t ed25519 -f "$KEYS_PATH/ansible-key" -N ""
+
+echo Generated ssh ansible key at $KEYS_PATH

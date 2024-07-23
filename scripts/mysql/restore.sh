@@ -3,7 +3,6 @@
 source files/env/default
 
 BACKUP_DIR="files/backups"
-
 MYSQL_IMAGE="mysql:8.0"
 
 BACKUP_FILENAME="$BACKUP_DIR/backup.sql"
