@@ -1,0 +1,44 @@
+---
+version: "3.2"
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    hostname: mysql
+    environment:
+      - MYSQL_DATABASE=$DB_DATABASE
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASS
+    volumes:
+      - semaphore-mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+        - backend
+
+  semaphore:
+    image: semaphoreui/semaphore:latest
+    container_name: semaphore
+    environment:
+      - SEMAPHORE_DB=$DB_DATABASE
+      - SEMAPHORE_DB_USER=$DB_USER
+      - SEMAPHORE_DB_PASS=$DB_PASS
+      - SEMAPHORE_DB_HOST=$DB_HOST
+      - SEMAPHORE_DB_PORT=$DB_PORT
+      - SEMAPHORE_DB_DIALECT=$DB_DIALECT
+    volumes:
+      - ../files/security:/var/security:ro
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql
+    restart: unless-stopped
+    networks:
+        - backend
+
+networks:
+  backend:
+
+volumes:
+  semaphore-mysql:

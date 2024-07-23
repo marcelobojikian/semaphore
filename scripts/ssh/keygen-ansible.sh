@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-KEYS_PATH=${SSH_PATH:=$HOME}
+KEYS_PATH=${SSH_PATH:="files/security/ssh"}
 
 for check in 'ssh-keygen' ; do
     if ! which "$check" &> /dev/null

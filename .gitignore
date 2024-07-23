@@ -1,0 +1,4 @@
+files/security/*
+files/backups/*
+files/env/*
+!files/env/example
