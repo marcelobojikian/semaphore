@@ -1,4 +1,8 @@
-files/security/*
-files/backups/*
 files/env/*
-!files/env/example
+!files/env/README.md
+
+files/security/*
+!files/security/README.md
+
+files/backups/*
+!files/backups/README.md
