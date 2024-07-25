@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-KEYS_PATH=${SSH_PATH:="files/security/ssh"}
+KEYS_PATH=${SSH_PATH:="files/security/ansible/ssh"}
 
 for check in 'ssh-keygen' ; do
     if ! which "$check" &> /dev/null

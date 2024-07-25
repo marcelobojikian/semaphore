@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VAULT_FILE_PATH=${VAULT_PATH:="files/security"}
+VAULT_FILE_PATH=${VAULT_PATH:="files/security/ansible"}
 
 mkdir -p $VAULT_FILE_PATH
 
