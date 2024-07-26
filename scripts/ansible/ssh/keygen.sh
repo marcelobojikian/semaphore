@@ -12,4 +12,8 @@ mkdir -p $KEYS_PATH
 
 ssh-keygen -q -t ed25519 -f "$KEYS_PATH/ansible-key" -N ""
 
+# Set readable key
+# chwon semaphore:root
+chmod o+r "$KEYS_PATH/ansible-key"
+
 echo Generated ssh ansible key at $KEYS_PATH
