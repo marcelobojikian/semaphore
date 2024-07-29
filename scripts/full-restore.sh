@@ -2,4 +2,4 @@
 
 BACKUP_DIR="files/backups"
 
-tar -xzf "$BACKUP_DIR/backup.tar.gz"
+tar -xzf "$BACKUP_DIR/$1.tar.gz"

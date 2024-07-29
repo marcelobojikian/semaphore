@@ -2,16 +2,13 @@
 
 DATE=$(date +%F-%H%M%S)
 
-SECURITY_PATH=files/security
-ENV_PATH=files/env
-DATABASE_FILE="files/backups/database.sql"
-
 BACKUP_DIR="files/backups"
 mkdir -p $BACKUP_DIR
 
-tar -czf "$BACKUP_DIR/backup.tar.gz" \
-         "$SECURITY_PATH" \
-         "$ENV_PATH" \
-         "$DATABASE_FILE"
+BACKUP_FILE=$BACKUP_DIR/$1.tar.gz
+BACKUP_FILE_DATE=$BACKUP_DIR/$1-$DATE.tar.gz
 
-cp "$BACKUP_DIR/backup.tar.gz" "$BACKUP_DIR/backup-$DATE.tar.gz"
+shift
+
+tar -czf "$BACKUP_FILE" $@
+cp "$BACKUP_FILE" "$BACKUP_FILE_DATE"

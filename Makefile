@@ -1,9 +1,12 @@
 backup:
 	./scripts/mysql/backup.sh
-	./scripts/full-backup.sh
+	./scripts/full-backup.sh backup \
+		files/security \
+		files/env \
+		files/database
 
 restore:
-	./scripts/full-restore.sh
+	./scripts/full-restore.sh backup
 	./scripts/mysql/restore.sh
 
 ansible-ssh-keygen:
