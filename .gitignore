@@ -1,6 +1,9 @@
 files/env/*
 !files/env/README.md
 
+files/database/*
+!files/database/README.md
+
 files/security/*
 !files/security/README.md
 
